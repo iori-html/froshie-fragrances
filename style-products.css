@@ -1,0 +1,260 @@
+@font-face {
+  font-family: 'Gotham Black';
+  src: url('C:\\Code Projects\\HTML\\froshie-fragrances\\Style\\Fonts\\GOTHAM-BLACK.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FOT-Seurat';
+  src: url('C:\\Code Projects\\HTML\\froshie-fragrances\\Style\\Fonts\\FOT-Seurat Pro B.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #E09FBD;
+  color: #000000;
+}
+
+.topnav {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.topnav a.logo-link {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.topnav a.logo-link:hover {
+  background-color: transparent;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: #333333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family:'FOT-Seurat', sans-serif;
+  font-size: 17px;
+}
+
+.nav-links a:hover {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.nav-links a.active {
+  background-color: #81D6AD;
+  color: #000000;
+  font-family: 'Gotham Black';
+}
+
+.catalog-wrapper {
+  max-width: 1240px;
+  margin: 30px auto;
+  padding: 0 25px;
+}
+
+.catalog-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.catalog-header h1 {
+  font-family: 'Gotham Black', Arial, sans-serif;
+  font-size: 32px;
+  margin: 0 0 8px 0;
+  color: #000000;
+}
+
+.catalog-header p {
+  margin: 0;
+  font-size: 16px;
+  color: #222222;
+}
+
+.catalog-section {
+  width: 100%;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #81D6AD;
+  color: #000000;
+  font-family: 'Gotham Black', Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.card-details {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category {
+  font-family: 'FOT-Seurat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #777777;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.product-title {
+  font-family: 'Gotham Black';
+  font-size: 22px;
+  margin: 0 0 8px 0;
+  color: #000000;
+}
+
+.product-desc {
+  font-family: 'FOT-Seurat', sans-serif;
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.4;
+  margin: 0 0 18px 0;
+  flex-grow: 1;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #eeeeee;
+}
+
+.price {
+  font-family: 'Gotham Black', Arial, sans-serif;
+  font-size: 18px;
+  color: #000000;
+}
+
+.search-container {
+  position: relative;
+  max-width: 520px;
+  margin: 18px auto 0 auto;
+}
+
+#productSearch {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 42px 13px 18px;
+  font-family: 'FOT-Seurat', sans-serif;
+  font-size: 15px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#productSearch::placeholder {
+  color: #777777;
+}
+
+#productSearch:focus {
+  border-color: #81D6AD;
+  box-shadow: 0 4px 16px rgba(129, 214, 173, 0.45);
+}
+
+.clear-btn {
+  display: none;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #eeeeee;
+  color: #333333;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clear-btn:hover {
+  background-color: #81D6AD;
+  color: #000000;
+}
+
+.no-results {
+  text-align: center;
+  padding: 50px 20px;
+  font-family: 'FOT-Seurat', sans-serif;
+  font-size: 18px;
+  color: #222222;
+}
