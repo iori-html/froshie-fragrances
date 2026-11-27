@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Gotham Black';
-  src: url('Fonts/GOTHAM-BLACK.TTF') format('truetype');
+  src: url('Style/Fonts/GOTHAM-BLACK.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'FOT-Seurat';
-  src: url('Fonts/FOT-Seurat Pro B.otf') format('opentype');
+  src: url('Style/Fonts/FOT-Seurat Pro B.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
