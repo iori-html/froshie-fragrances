@@ -14,6 +14,10 @@
   font-display: swap;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -22,6 +26,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Navigation */
 .topnav {
   background-color: #ffffff;
   display: flex;
@@ -43,10 +48,13 @@ body {
 .logo {
   height: 100px;
   width: auto;
+  transition: height 0.2s ease;
 }
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-links a {
@@ -66,14 +74,15 @@ body {
 .nav-links a.active {
   background-color: #81D6AD;
   color: #000000;
-  font-family: 'Gotham Black';
+  font-family: 'Gotham Black', sans-serif;
 }
 
+/* About Content */
 .content-container {
   display: flex;
   flex-direction: column;
-  gap: 110px;
-  padding: 70px 0 110px;
+  gap: clamp(50px, 8vw, 110px);
+  padding: clamp(40px, 6vw, 70px) 0 clamp(60px, 8vw, 110px);
 }
 
 .about-row {
@@ -92,9 +101,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 70px;
-  box-sizing: border-box;
+  padding: 40px clamp(24px, 5vw, 70px);
   z-index: 2;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .about-row:not(.reverse) .text-block {
@@ -107,17 +117,17 @@ body {
 
 .text-block h2 {
   font-family: 'Gotham Black', serif;
-  font-size: 3.1rem;
+  font-size: clamp(2rem, 4vw, 3.1rem);
   font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 28px 0;
+  margin: 0 0 22px 0;
   line-height: 1.15;
 }
 
 .text-block p {
   font-family: 'FOT-Seurat', sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.85;
+  font-size: clamp(1.05rem, 1.8vw, 1.5rem);
+  line-height: 1.75;
   color: #2b2b2b;
   margin: 0;
 }
@@ -125,8 +135,8 @@ body {
 .image-side {
   position: relative;
   flex: 1.15;
-  height: 520px;     
-  max-height: 520px; 
+  height: 520px;
+  max-height: 520px;
   overflow: hidden;
   border: none;
   border-radius: 0;
@@ -156,12 +166,8 @@ body {
   pointer-events: none;
 }
 
+/* Tablet & Mobile Breakpoints */
 @media (max-width: 900px) {
-  .content-container {
-    gap: 80px;
-    padding: 50px 0 80px;
-  }
-
   .about-row,
   .about-row.reverse {
     flex-direction: column;
@@ -172,16 +178,47 @@ body {
   .about-row:not(.reverse) .text-block,
   .about-row.reverse .text-block {
     text-align: center;
-    padding: 20px 30px 36px;
+    padding: 20px 24px 32px;
+    width: 100%;
   }
 
   .image-side {
     width: 100%;
-    min-height: 300px;
+    flex: none;
+    height: 320px;
+    max-height: 320px;
   }
 
   .image-side.fade-left::after,
   .image-side.fade-right::after {
     background: linear-gradient(to bottom, #E09FBD 0%, rgba(224, 159, 189, 0.45) 25%, rgba(224, 159, 189, 0) 60%);
+  }
+}
+
+@media (max-width: 600px) {
+  .topnav {
+    flex-direction: column;
+    padding: 8px 15px 12px;
+    gap: 6px;
+  }
+
+  .logo {
+    height: 65px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .nav-links a {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 15px;
+  }
+
+  .image-side {
+    height: 260px;
+    max-height: 260px;
   }
 }
